@@ -1,11 +1,15 @@
 <template>
   <div class="article">
-    <Article :v-if="article" :article="article" />
+    <Header />
+    <div class="container">
+      <Article :v-if="article" :article="article" />
+    </div>
   </div>
 </template>
 
 <script>
 import Article from "../components/Article.vue";
+import Header from "../components/Header.vue";
 
 export default {
   name: "Articles",
@@ -16,6 +20,7 @@ export default {
   },
   components: {
     Article,
+    Header,
   },
   async mounted() {
     const id = this.$route.params.id;
@@ -47,9 +52,6 @@ export default {
 
 <style scoped lang="scss">
 .article {
-  background-color: #fff;
-  border-radius: 18px;
-  padding: 15px;
   &__name {
     font-size: 20px;
   }

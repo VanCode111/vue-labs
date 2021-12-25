@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../pages/HomePage.vue";
 import Article from "../pages/Article.vue";
+import NewsPage from "../pages/NewsPage.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: "/article/:id",
     name: "Article",
     component: Article,
+  },
+  {
+    path: "/news",
+    name: "NewsPage",
+    component: NewsPage,
   },
 ];
 

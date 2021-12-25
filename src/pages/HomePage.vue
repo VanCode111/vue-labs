@@ -1,38 +1,19 @@
 <template>
   <div class="home-page">
+    <Header />
     <div class="container">
-      <v-btn> Кнопка </v-btn>
-      <Articles :articles="articles" />
+      <h1>Hello there!</h1>
     </div>
   </div>
 </template>
 
 <script>
-import Articles from "../components/Articles.vue";
+import Header from "../components/Header.vue";
 
 export default {
   name: "HomePage",
-  data: () => {
-    return {
-      articles: [],
-    };
-  },
-  props: {
-    msg: String,
-  },
   components: {
-    Articles,
-  },
-  async mounted() {
-    const articles = await this.getArticles();
-    this.articles = articles;
-  },
-  methods: {
-    async getArticles() {
-      const res = await fetch("articles.json");
-      const articles = await res.json();
-      return articles;
-    },
+    Header,
   },
 };
 </script>
